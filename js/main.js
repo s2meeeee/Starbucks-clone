@@ -35,3 +35,28 @@ window.addEventListener('scroll', _.throttle(function(){
 },300));
 // _.thottle(함수, 시간) <쓰는 이유는 함수를 초당 발생시키는데 이것으로 
 //브라우저가 무거워질수도잇다. 그래서 thottle을 사용하여 시간설정을 두고 함수를 발생시키게 하는것
+
+const fadeEls = document.querySelectorAll('.visual .fade-in');
+fadeEls.forEach(function(fadeEl, index){
+    // gsap.to(요소, 시간, 옵션);
+    gsap.to(fadeEl, 1, {
+        delay: (index +1 ) *.7,
+        opacity:1,
+    })
+    
+});
+
+
+// new Swiper(선택자, 옵션};
+new Swiper('.notice-line .swiper', {
+    direction:'vertical',
+    autoplay:true,
+    loop:true
+});
+
+new Swiper('.promotion .swiper', {
+    slidesPerView:3, //한번에 보여줄 슬라이드 개수
+    spaceBetween: 10, //슬라이드 사이 여백
+    
+});
+
